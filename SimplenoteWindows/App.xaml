@@ -3,5 +3,11 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:SimplenoteWindows">
-
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Application-specific resources. -->
+            <x:String x:Key="title">Beta</x:String>
+            <x:String x:Key="subtitle">The simplest way to keep notes.</x:String>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>
