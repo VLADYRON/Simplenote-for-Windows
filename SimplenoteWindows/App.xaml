@@ -6,7 +6,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <!-- Application-specific resources. -->
-            <x:String x:Key="title">Beta</x:String>
+            <x:String x:Key="title">Simplenote for Windows</x:String>
             <x:String x:Key="subtitle">The simplest way to keep notes.</x:String>
         </ResourceDictionary>
     </Application.Resources>
