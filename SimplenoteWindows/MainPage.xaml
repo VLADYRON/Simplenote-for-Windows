@@ -7,13 +7,55 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     RequestedTheme="Light">
+    <Page.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="Foreground" Value="Blue"/>
+            <Setter Property="Padding" Value="10"/>
+        </Style>
+    </Page.Resources>
     <Grid Background="White">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="wideView">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="best.(RelativePanel.RightOf)" Value="free"/>
+                        <Setter Target="best.(RelativePanel.AlignTopWidth)" Value="free"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="narrowView">
+                    <VisualState.Setters>
+                        <Setter Target="best.(RelativePanel.Below)" Value="paid"/>
+                        <Setter Target="best.(RelativePanel.AlignLeftWithPanel)" Value="true"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
-            <RowDefinition Height="16*"/>
-            <RowDefinition Height="16*"/>
-            <RowDefinition Height="100*"/>
-            <RowDefinition Height="16*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="1" FontSize="60" FontFamily="Segoe WP SemiLight" Foreground="#FF808080" TextAlignment="Center" Text="{StaticResource subtitle}" TextWrapping="WrapWholeWords" VerticalAlignment="Top" />
+        <TextBlock Grid.Row="0" FontSize="55" FontFamily="Segoe WP SemiLight" Foreground="#FF808080" TextAlignment="Center" Text="{StaticResource subtitle}" TextWrapping="WrapWholeWords" VerticalAlignment="Top" />
+        <RelativePanel Grid.Row="1">
+            <Image Source="Assets/logo.png" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+        </RelativePanel>
+        <RelativePanel Grid.Row="2">
+            <StackPanel
+                RelativePanel.AlignHorizontalCenterWithPanel="True"
+                RelativePanel.AlignVerticalCenterWithPanel="True"
+                Width="260">
+                <TextBox Margin="0 0 0 20"/>
+                <TextBox/>
+            </StackPanel>
+        </RelativePanel>
     </Grid>
 </Page>
