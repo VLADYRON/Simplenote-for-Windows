@@ -8,11 +8,18 @@
     mc:Ignorable="d"
     RequestedTheme="Light">
     <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#FF498CC8"/>
+            <Setter Property="Foreground" Value="#FFFFFFFF"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Width" Value="300"/>
+        </Style>
         <Style TargetType="TextBox">
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="BorderBrush" Value="Gray"/>
             <Setter Property="Foreground" Value="Blue"/>
             <Setter Property="Padding" Value="10"/>
+            <Setter Property="Margin" Value="0, 0, 0, 20"/>
         </Style>
     </Page.Resources>
     <Grid Background="White">
@@ -39,22 +46,23 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
-            <RowDefinition Height="15*"/>
-            <RowDefinition Height="15*"/>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="20*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" FontSize="55" FontFamily="Segoe WP SemiLight" Foreground="#FF808080" TextAlignment="Center" Text="{StaticResource subtitle}" TextWrapping="WrapWholeWords" VerticalAlignment="Top" />
+        <TextBlock Grid.Row="0" FontSize="55" FontFamily="Segoe WP SemiLight" Foreground="#FF808080" TextAlignment="Center" Text="{StaticResource subtitle}" TextWrapping="WrapWholeWords" UseLayoutRounding="True" VerticalAlignment="Center" />
         <RelativePanel Grid.Row="1">
-            <Image Source="Assets/logo.png" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+            <Image Source="Assets/logo-dev.png" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
         </RelativePanel>
         <RelativePanel Grid.Row="2">
             <StackPanel
                 RelativePanel.AlignHorizontalCenterWithPanel="True"
                 RelativePanel.AlignVerticalCenterWithPanel="True"
-                Width="260">
-                <TextBox Margin="0 0 0 20"/>
+                Width="300">
                 <TextBox/>
+                <TextBox/>
+                <Button Content="Sign In"/>
             </StackPanel>
         </RelativePanel>
     </Grid>
